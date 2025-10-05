@@ -6,7 +6,7 @@ app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
 
 app.use(express.static('.'));
 
