@@ -1,6 +1,6 @@
 async function loadGames() {
   try {
-    const res = await fetch("/api/games");
+    const res = await fetch("games.json");
     const games = await res.json();
 
     const gameGrid = document.getElementById("gameGrid");
