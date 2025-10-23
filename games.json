@@ -1,15 +1,16 @@
 [
   {
-    "title": "Baldi",
+    "title": "baldi",
     "entry": "games/baldi/index.html"
   },
   {
     "title": "Bendy",
-    "entry": "games/Bendy/index.html"
+    "entry": "games/bendy/index.html"
   },
   {
     "title": "FNAF1",
     "entry": "games/FNAF1/index.html"
   }
 ]
+
 
