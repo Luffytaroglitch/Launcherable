@@ -4,14 +4,15 @@
     "entry": "games/baldi/index.html"
   },
   {
-    "title": "Bendy",
-    "entry": "games/Bendy/index.html"
+    "title": "bendy",
+    "entry": "games/bendy/index.html"
   },
   {
     "title": "FNAF1",
     "entry": "games/FNAF1/index.html"
   }
 ]
+
 
 
 
