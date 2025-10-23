@@ -10,8 +10,12 @@
   {
     "title": "FNAF1",
     "entry": "games/FNAF1/index.html"
+  },
+    "title": "cuphead",
+    "entry": "games/cuphead/"
   }
 ]
+
 
 
 
