@@ -18,8 +18,13 @@
     {
     "title": "Super Mario 64",
     "entry": "games/SM64/index.html"
+  },
+  {
+    "title": "Sonic the Hedgechog",
+    "entry": "games/STH/index.html"
   }
 ]
+
 
 
 
