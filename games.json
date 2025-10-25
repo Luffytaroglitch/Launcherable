@@ -26,8 +26,13 @@
   {
     "title": "People Playground",
     "entry": "games/PeoplePlayground/index.html"
+  },
+   {
+    "title": "Slime Rancher",
+    "entry": "games/SlimeRancher/index.html"
   }
 ]
+
 
 
 
