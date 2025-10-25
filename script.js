@@ -8,43 +8,22 @@ async function loadGames() {
     const welcomeScreen = document.getElementById("welcomeScreen");
     const gameCount = document.getElementById("gameCount");
     const searchInput = document.getElementById("searchInput");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
 
     gameGrid.innerHTML = "";
 
-    const gameIcons = {
-      'Baldi': '',
-      'Bendy': '',
-      'FNAF': '',
-      'FNAF 1': ''
-    };
-
-    const availableGames = [];
-    const comingSoonGames = [];
-
-    games.forEach(game => {
-      if (game.entry) {
-        availableGames.push(game);
-      } else {
-        comingSoonGames.push(game);
-      }
-    });
-
-    // Update game count
-    const totalAvailableGames = availableGames.length;
-    gameCount.textContent = `${totalAvailableGames} Game${totalAvailableGames !== 1 ? 's' : ''}`;
+    const totalGames = games.length;
+    gameCount.textContent = `${totalGames} Game${totalGames !== 1 ? "s" : ""}`;
 
     let activeCard = null;
 
-    // Create and append available game cards
-    availableGames.forEach(game => {
+    games.forEach(game => {
       const card = document.createElement("div");
       card.className = "game-card";
 
-      const icon = gameIcons[game.title] || '🎮';
-
       card.innerHTML = `
         <div class="game-card-header">
-          <div class="game-icon">${icon}</div>
+          <div class="game-icon">🎮</div>
           <div class="game-info">
             <div class="game-title">${game.title}</div>
             <div class="game-status">
@@ -54,61 +33,40 @@ async function loadGames() {
         </div>
       `;
 
-      card.onclick = () => {
-        if (activeCard) {
-          activeCard.classList.remove("active");
-        }
-
+      card.addEventListener("click", () => {
+        if (activeCard) activeCard.classList.remove("active");
         card.classList.add("active");
         activeCard = card;
 
         welcomeScreen.classList.add("hidden");
         gameFrame.src = game.entry;
         gameFrame.classList.add("visible");
-      };
+        fullscreenBtn.style.display = "block";
+      });
 
       gameGrid.appendChild(card);
     });
 
-    // Create and append coming soon game cards
-    comingSoonGames.forEach(game => {
-      const card = document.createElement("div");
-      card.className = "game-card disabled";
-
-      const icon = gameIcons[game.title] || '🎮';
-
-      card.innerHTML = `
-        <div class="game-card-header">
-          <div class="game-icon">${icon}</div>
-          <div class="game-info">
-            <div class="game-title">${game.title}</div>
-            <div class="game-status">
-              <span>Coming soon</span>
-            </div>
-          </div>
-        </div>
-      `;
-
-      gameGrid.appendChild(card);
-    });
-
-    searchInput.addEventListener("input", (e) => {
-      const searchTerm = e.target.value.toLowerCase();
+    searchInput.addEventListener("input", e => {
+      const term = e.target.value.toLowerCase();
       const cards = gameGrid.querySelectorAll(".game-card");
 
       cards.forEach(card => {
         const title = card.querySelector(".game-title").textContent.toLowerCase();
-        if (title.includes(searchTerm)) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+        card.style.display = title.includes(term) ? "block" : "none";
       });
     });
 
-  } catch (error) {
-    console.error("Failed to load games:", error);
+    fullscreenBtn.addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        gameFrame.requestFullscreen().catch(err => console.error("Fullscreen error:", err));
+      } else {
+        document.exitFullscreen();
+      }
+    });
+  } catch (err) {
+    console.error("Failed to load games:", err);
   }
 }
 
-loadGames();
+document.addEventListener("DOMContentLoaded", loadGames);
