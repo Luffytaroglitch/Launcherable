@@ -1,10 +1,10 @@
 [
   {
-    "title": "baldi",
+    "title": "Baldi's Classic Remaster",
     "entry": "games/baldi/index.html"
   },
   {
-    "title": "bendy",
+    "title": "Bendy and the Ink Machine",
     "entry": "games/bendy/index.html"
   },
   {
@@ -12,7 +12,8 @@
     "entry": "games/FNAF1/index.html"
   },
   {
-    "title": "cuphead",
-    "entry": "games/cuphead/"
+    "title": "",
+    "entry": ""
   }
 ]
+
