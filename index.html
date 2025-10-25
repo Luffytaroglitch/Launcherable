@@ -4,66 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Launcherable</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-  <!-- 🔐 Login Section -->
-  <section id="loginSection" class="login-screen">
-    <div class="login-box">
-      <h2>Sign in to Launcherable</h2>
-      <input type="email" id="emailInput" placeholder="Email" />
-      <input type="password" id="passwordInput" placeholder="Password" />
-      <div class="auth-buttons">
-        <button id="signInBtn">Sign In</button>
-        <button id="signUpBtn">Sign Up</button>
+  <div class="background-overlay"></div>
+
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">
+        <span class="logo-icon">🎮</span>
+        <span class="logo-text">Launcherable</span>
+      </h1>
+      <div class="header-info">
+        <span class="game-count" id="gameCount">0 Games</span>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- 🎮 Main App -->
-  <div class="app hidden">
-    <header class="header">
-      <div class="header-content">
-        <div class="logo">
-          <span class="logo-icon">🎮</span>
-          Launcherable
-        </div>
-        <div class="header-actions">
-          <span id="gameCount" class="game-count">0 Games</span>
-          <button id="wishlistBtn" class="wishlist-btn">💖 Wishlist on Steam</button>
-          <button id="fullscreenBtn" class="fullscreen-btn">⛶ Fullscreen</button>
-          <button id="signOutBtn" class="signout-btn">Sign Out</button>
+  <main class="main-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Game Library</h2>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search games..." />
         </div>
       </div>
-    </header>
+      <div class="game-grid" id="gameGrid"></div>
+    </aside>
 
-    <main class="main-container">
-      <aside class="sidebar">
-        <div class="sidebar-header">
-          <h2>Games</h2>
-          <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search games..." />
-          </div>
+    <section class="game-display">
+      <div class="toolbar">
+        <button id="backBtn" class="toolbar-btn hidden">🏠 Back</button>
+        <button id="fullscreenBtn" class="toolbar-btn hidden">⛶ Fullscreen</button>
+      </div>
+
+      <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+          <div class="welcome-icon">🎮</div>
+          <h2>Select a Game to Play!</h2>
+          <p>Choose from your library to get started.</p>
         </div>
-        <div id="gameGrid" class="game-grid"></div>
-      </aside>
+      </div>
 
-      <section class="game-display">
-        <div class="welcome-screen" id="welcomeScreen">
-          <div class="welcome-content">
-            <div class="welcome-icon">🚀</div>
-            <h2>Welcome to Launcherable</h2>
-            <p>Select a game to play</p>
-          </div>
-        </div>
-        <iframe id="gameFrame" class="game-frame"></iframe>
-      </section>
-    </main>
-  </div>
+      <iframe id="gameFrame" class="game-frame"></iframe>
+    </section>
+  </main>
 
-  <script src="auth.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
