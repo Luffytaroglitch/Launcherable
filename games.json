@@ -14,8 +14,13 @@
   {
     "title": "SonicAdvance",
     "entry": "games/SonicAdvance/index.html"
+  },
+    {
+    "title": "Super Mario 64",
+    "entry": "games/SM64/index.html"
   }
 ]
+
 
 
 
