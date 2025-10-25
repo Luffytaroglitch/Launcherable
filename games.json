@@ -28,10 +28,11 @@
     "entry": "games/PeoplePlayground/index.html"
   },
    {
-    "title": "Slime Rancher",
-    "entry": "games/SlimeRancher/index.html"
+    "title": "Super Mario Bros",
+    "entry": "games/SMB/index.html"
   }
 ]
+
 
 
 
