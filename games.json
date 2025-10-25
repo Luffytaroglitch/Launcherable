@@ -22,8 +22,13 @@
   {
     "title": "Sonic the Hedgechog",
     "entry": "games/STH/index.html"
+  },
+  {
+    "title": "People Playground",
+    "entry": "games/PeoplePlayground/index.html"
   }
 ]
+
 
 
 
