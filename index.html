@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Launcherable</title>
-  <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
   <div class="background-overlay"></div>
@@ -18,6 +18,7 @@
       </h1>
       <div class="header-info">
         <span class="game-count" id="gameCount">0 Games</span>
+        <button id="themeToggle" class="theme-toggle">🌙</button>
       </div>
     </div>
   </header>
@@ -34,11 +35,6 @@
     </aside>
 
     <section class="game-display">
-      <div class="toolbar">
-        <button id="backBtn" class="toolbar-btn hidden">🏠 Back</button>
-        <button id="fullscreenBtn" class="toolbar-btn hidden">⛶ Fullscreen</button>
-      </div>
-
       <div class="welcome-screen" id="welcomeScreen">
         <div class="welcome-content">
           <div class="welcome-icon">🎮</div>
@@ -46,7 +42,6 @@
           <p>Choose from your library to get started.</p>
         </div>
       </div>
-
       <iframe id="gameFrame" class="game-frame"></iframe>
     </section>
   </main>
