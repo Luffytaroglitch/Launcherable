@@ -15,32 +15,24 @@
     "title": "SonicAdvance",
     "entry": "games/SonicAdvance/index.html"
   },
-    {
+  {
     "title": "Super Mario 64",
     "entry": "games/SM64/index.html"
   },
   {
-    "title": "Sonic the Hedgechog",
+    "title": "Sonic the Hedgehog",
     "entry": "games/STH/index.html"
   },
   {
     "title": "People Playground",
     "entry": "games/PeoplePlayground/index.html"
   },
-   {
+  {
     "title": "Super Mario Bros",
     "entry": "games/SMB/index.html"
   },
-   {
-    "title": "Slime Rancher,
+  {
+    "title": "Slime Rancher",
     "entry": ""
   }
 ]
-
-
-
-
-
-
-
-
