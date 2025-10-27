@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Launcherable</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Launcherable</h1>
-    <button id="settingsBtn">⚙️ Settings</button>
+  <div class="background-overlay"></div>
+
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">
+        <span class="logo-icon">🎮</span>
+        <span class="logo-text">Launcherable</span>
+      </h1>
+      <div class="header-info">
+        <span class="game-count" id="gameCount">0 Games</span>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <p id="gameCount">0 Games</p>
-    <div id="gameLibrary"></div>
-  </main>
+  <main class="main-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Game Library</h2>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search games..." />
+        </div>
+      </div>
+      <div class="game-grid" id="gameGrid"></div>
+    </aside>
 
-  <!-- Settings Modal -->
-  <div id="settingsModal" class="modal">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <h2>Settings</h2>
-      <label>
-        <input type="checkbox" id="darkModeToggle">
-        Dark Mode
-      </label>
-      <br>
-      <label>
-        <input type="checkbox" id="showGameCount" checked>
-        Show Game Count
-      </label>
-    </div>
-  </div>
+    <section class="game-display">
+      <div class="toolbar">
+        <button id="backBtn" class="toolbar-btn hidden">🏠 Back</button>
+        <button id="fullscreenBtn" class="toolbar-btn hidden">⛶ Fullscreen</button>
+      </div>
+
+      <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+          <div class="welcome-icon">🎮</div>
+          <h2>Select a Game to Play!</h2>
+          <p>Choose from your library to get started.</p>
+        </div>
+      </div>
+
+      <iframe id="gameFrame" class="game-frame"></iframe>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
