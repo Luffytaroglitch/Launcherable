@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Launcherable</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="background-overlay"></div>
+
   <header class="header">
-    <h1 class="logo">
-      <span class="logo-icon">🎮</span>
-      <span>Launcherable</span>
-    </h1>
-    <div class="header-info">
-      <span id="gameCount">0 Games</span>
+    <div class="header-content">
+      <h1 class="logo">
+        <span class="logo-icon">🎮</span>
+        <span class="logo-text">Launcherable</span>
+      </h1>
+      <div class="header-info">
+        <span class="game-count" id="gameCount">0 Games</span>
+      </div>
     </div>
   </header>
 
@@ -24,21 +27,27 @@
       <div class="sidebar-header">
         <h2>Game Library</h2>
         <div class="search-box">
-          <input type="text" id="searchInput" placeholder="Search games...">
+          <input type="text" id="searchInput" placeholder="Search games..." />
         </div>
       </div>
       <div class="game-grid" id="gameGrid"></div>
     </aside>
 
     <section class="game-display">
+      <div class="toolbar">
+        <button id="backBtn" class="toolbar-btn hidden">🏠 Back</button>
+        <button id="fullscreenBtn" class="toolbar-btn hidden">⛶ Fullscreen</button>
+      </div>
+
       <div class="welcome-screen" id="welcomeScreen">
         <div class="welcome-content">
-          <h2>Welcome to Launcherable</h2>
-          <p>Select a game channel to begin!</p>
+          <div class="welcome-icon">🎮</div>
+          <h2>Select a Game to Play!</h2>
+          <p>Choose from your library to get started.</p>
         </div>
       </div>
+
       <iframe id="gameFrame" class="game-frame"></iframe>
-      <button class="fullscreen-button" id="fullscreenBtn">⛶</button>
     </section>
   </main>
 
