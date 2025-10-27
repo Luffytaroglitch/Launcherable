@@ -1,63 +1,141 @@
-.game-card {
-  width: 160px;
-  height: 120px;
-  background: linear-gradient(180deg, #ffffff, #f0f0f0);
-  border-radius: 24px;
-  box-shadow: 0 4px 10px var(--shadow-light);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --wii-blue: #00aef0;
+  --wii-gray: #f5f5f5;
+  --wii-white: #ffffff;
+  --wii-shadow: rgba(0, 0, 0, 0.15);
+  --text-dark: #222;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(180deg, #e9f4ff, #ffffff);
+  color: var(--text-dark);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--wii-white);
+  border-bottom: 2px solid #dce6f3;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px var(--wii-shadow);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--wii-blue);
+}
+
+.main-container {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.sidebar {
+  width: 350px;
+  background: #f8f9fb;
+  border-right: 2px solid #dce6f3;
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
-  cursor: pointer;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #d0d8e2;
+  background: var(--wii-white);
+  outline: none;
+  margin-bottom: 1rem;
+  transition: 0.2s ease;
+}
+
+.search-box input:focus {
+  border-color: var(--wii-blue);
+  box-shadow: 0 0 5px rgba(0, 174, 240, 0.3);
+}
+
+.game-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-items: center;
+  align-content: start;
+  overflow-y: auto;
+  background: var(--wii-gray);
+}
+
+.game-card {
+  width: 180px;
+  height: 140px;
+  background: var(--wii-white);
+  border-radius: 25px;
+  box-shadow: 0 5px 12px var(--wii-shadow);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
   text-align: center;
+  cursor: pointer;
   position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.game-card::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(0, 150, 214, 0.3);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: width 0.5s ease, height 0.5s ease, opacity 0.6s ease;
-  pointer-events: none;
 }
 
 .game-card:hover {
-  transform: scale(1.07);
-  box-shadow: 0 10px 30px rgba(0, 150, 214, 0.3);
-}
-
-.game-card:active::after {
-  width: 300%;
-  height: 300%;
-  opacity: 0;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 174, 240, 0.4);
 }
 
 .game-card.active {
   border: 2px solid var(--wii-blue);
-  box-shadow: 0 0 25px rgba(0, 150, 214, 0.5);
-  animation: channelSelect 0.4s ease;
+  box-shadow: 0 0 20px rgba(0, 174, 240, 0.6);
+  transform: scale(1.08);
 }
 
-@keyframes channelSelect {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(0, 150, 214, 0);
-  }
-  40% {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(0, 150, 214, 0.6);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 15px rgba(0, 150, 214, 0.4);
-  }
+.game-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: gray;
+}
+
+.game-display {
+  flex: 1;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid #dce6f3;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
